@@ -44,6 +44,40 @@ const useStyles = makeStyles((theme: Theme) => ({
     textAlign: 'center',
     fontFamily: 'Ubuntu, Helvetica, Arial, sans-serif',
   },
+
+  titleContainer: {
+    display: 'flex',
+    justifyContent: 'center', // Centrado horizontal
+    alignItems: 'center', // Centrado vertical
+    textAlign: 'center', // Alineación del texto
+    marginTop: '20px',
+    [theme.breakpoints.down('md')]: {
+      marginTop: '0px',
+    },
+  },
+  
+  
+  title: {
+    display: 'flex',
+    alignItems: 'start',
+    fontFamily: 'Fonarto',
+    fontStyle: 'normal',
+    fontSize: '50px',
+    margin: 0,
+    textAlign: 'left',
+    fontWeight: '300',
+    color: '#AA1936',
+    marginBottom: '5%',
+    [theme.breakpoints.down('md')]: {
+      textAlign: 'left',
+      fontWeight: '200',
+      fontSize: '2.6em',
+    },
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center',
+      fontSize: '1.9em',
+    },
+  },
   iconsDiv: {
     fontSize: '0px',
     textAlign: 'center',
@@ -55,7 +89,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }));
 
-const IconsInfo = ({ dates, duration, language, place, format }: { dates: string[], duration: any, language: string, place?: any, format: any }) => {
+const IconsInfo = ({ title, dates, duration, language, place, format }: {title?: string, dates: string[], duration: any, language: string, place?: any, format: any }) => {
 
   const classes = useStyles();
   const theme = useTheme();
@@ -63,8 +97,13 @@ const IconsInfo = ({ dates, duration, language, place, format }: { dates: string
 
   return (
     <div style={{ margin: '0px auto', backgroundColor: '#F7F7F7', maxWidth: '100%', paddingTop: '15px' }} className={classes.container}>
-      <div className={classes.tableContainer}>
-
+          {title && (
+        <div className={classes.titleContainer}>
+          <h1 className={classes.title}>
+            {title}
+          </h1>
+        </div>
+      )}
         {isMobile ? (
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%', rowGap: '15px', padding: '10px 0 15px' }}>
             <div style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'center', alignItems: 'start', columnGap: '3px' }}>

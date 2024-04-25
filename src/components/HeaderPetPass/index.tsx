@@ -1,7 +1,6 @@
-// Header.tsx
-import React from 'react';
+
 import './Header.css';
-import DownloadIcon from '@mui/icons-material/Download';
+
 import { makeStyles } from '@mui/styles';
 import { Theme } from '@mui/material';
 
@@ -55,9 +54,7 @@ const HeaderBecaAon = ({ image}: { image: string }) => {
   return (
     <div className="header-container" style={{ position: 'relative' }}>
       <img className='header-image' src={image} alt="Header" />
-      <button className={classes.downLoadBtn} onClick={handleDownload}>
-        Únete al reto
-      </button>
+    
     </div>
   );
 };

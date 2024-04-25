@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-const BodyInfo = ({ title, body }: { title?: any, body: any },) => {
+const BodyInfo1 = ({ title, body }: { title?: any, body: any },) => {
   const classes = useStyles();
 
   return (
@@ -109,4 +109,4 @@ const BodyInfo = ({ title, body }: { title?: any, body: any },) => {
   );
 };
 
-export default BodyInfo;
+export default BodyInfo1;

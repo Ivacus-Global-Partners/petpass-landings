@@ -1,18 +1,16 @@
 import React from "react";
-import BodyBecaAon from "../../components/BodyBecaAon";
 import BodyInfo from "../../components/BodyInfo";
-import IconsInfoBecaAon from "../../components/IconsInfoBecaAon";
-import InfoFormBecaAon from "../../components/infoFormBecaAon";
-import FooterBecaAon from "../../components/FooterBecaAon";
+import InfoForm from "../../components/infoForm";
+import IconsInfo from "../../components/IconsInfo";
 import HeaderBeca from "../../components/HeaderPetPass";
-import CardsClaustroBecaAon from "../../components/CardsClaustroBecaAon";
 import { Helmet } from "react-helmet";
-import ComoParticipar from "../../components/ComoParticipar";
 
-const BecaAon: React.FC = () => {
+
+
+const PetPass: React.FC = () => {
   const href =
-    "https://sagardoyschool.com/archivos/master-executive-en-direccion-de-rrhh.pdf";
-  const download = "master-executive-en-direccion-de-rrhh.pdf";
+    "";
+  const download = "";
   const claustro = [
     {
       img: "https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2FLanding%20Beca%20Aon%2FCarmen-Burgos-Casas%402x.png?alt=media&token=11917d00-fa73-42fe-8af4-03589c5f5671",
@@ -30,31 +28,15 @@ const BecaAon: React.FC = () => {
       job: "Directora de Estrategia de Sagardoy Business & Law School ",
     },
   ];
-
   const texto = (
     <>
-      La gestión de Recursos Humanos (RRHH) evoluciona con el contexto. La IA,
-      la experiencia de empleado, el desarrollo de talento y la DEI&A, son solo
-      algunas de las áreas que están redefiniendo el rol del director de RRHH.
+      <strong>La solución digital, <span style={{ color: "#2DA956" }}>Web, App y Smart Pet Tag</span> para la movilidad inteligente de tus mascotas</strong> 😘
       <br />
       <br />
-      Por ello, desde <strong>Sagardoy School,</strong> junto con{" "}
-      <strong>Aon,</strong> lanzamos una convocatoria de beca para el{" "}
-      <strong>
-        Máster Executive en Dirección de Recursos Humanos de Sagardoy Business &
-        Law School,
-      </strong>{" "}
-      dirigida a profesionales que aspiren a liderar esta transformación en sus
-      organizaciones.
-      <br />
-      <br />
-      
-        Participa en el desafío y únete a nuestra comunidad de expertos.<strong> Gana
-        una beca del 100% para nuestro Máster Executive en Dirección de Recursos Humanos.
-      </strong>
+      <strong>Date de <span style={{color:"#007aff"}}>Alta Gratis</span> y disfruta de la mejor plataforma para tener digitalizada la documentación de tu “peludo” con un <span style={{ color: "#2DA956" }}>Smart Pet Tag</span> para localizar siempre a tu mejor amigo y poder acceder a comercios, bares, restaurantes y todos los medios de transporte público sin barreras.</strong>
     </>
   );
-
+  
   const texto1 = (
     <>
       Si eres directivo o futuro directivo de RRHH que busca impulsar cambios
@@ -110,10 +92,10 @@ const BecaAon: React.FC = () => {
 
       <HeaderBeca
         image={
-          "https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2FLanding%20Beca%20Aon%2FHeaderBecaAon.png?alt=media&token=db0fc995-373d-4342-92e9-5804de347328"
+          "https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2FSlider_petpass1.png?alt=media&token=4e323848-e003-47bb-8b30-a3ecad10f265"
         }
       />
-      <InfoFormBecaAon
+      <InfoForm
         productId="0x111115a"
         formId="0x11110e1"
         href={href}
@@ -125,45 +107,22 @@ const BecaAon: React.FC = () => {
       />
       <BodyInfo
         title={
-          <p style={{ color: "#980628", margin: 0 }}>¿Qúe es la beca Aon?</p>
+          <p style={{ color: "#2DA956", margin: 0 }}>¿Qué es PETPASS?</p>
         }
         body={texto}
       />
-      <IconsInfoBecaAon
-        profile="Directivos o futuros directivos de RRHH que buscan impulsar cambios significativos en las organizaciones."
-        deadlineDate="Viernes, 31 de mayo de 2024 "
-        winnersAnnouncement="Viernes, 7 de junio de 2024"
-        prizes={textoPremios}
-      />
-      <BodyBecaAon
-        title={
-          <p style={{ color: "#980628", margin: 0 }}>
-            ¿Quién puede participar? 
-          </p>
-        }
-        body={texto1}
-      />
-      <ComoParticipar />
-      <BodyBecaAon
-        title={
-          <p style={{ color: "#980628", margin: 0 }}>
-            ¿A qué premios optarás? 
-          </p>
-        }
-        body={texto2}
-      />
-      <BodyBecaAon
-        title={
-          <p style={{ color: "#980628", margin: 0 }}>
-            ¿Cuándo anunciaremos a los ganadores? 
-          </p>
-        }
-        body={texto3}
-      />
-      <CardsClaustroBecaAon claustro={claustro} title="Jurado" />
-      <FooterBecaAon />
+    
+      <IconsInfo
+        title="¿Qué incluye?"
+        body={[
+          "Web y App",
+          "Smart Pet Tag",
+          "Localización en tiempo real",
+          "Acceso a comercios, bares, restaurantes y medios de transporte público",
+        ]}
+     
     </div>
   );
 };
 
-export default BecaAon;
+export default PetPass;

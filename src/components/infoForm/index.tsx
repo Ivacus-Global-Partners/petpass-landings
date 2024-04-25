@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   form: {
     background: "#E5E5E5",
     borderRadius: "20px",
+    border:"1px solid #2DA956",
     boxSizing: "border-box",
     padding: "2.5vw 2vw",
     margin: "10px 0",
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: "30vw",
     position: "absolute",
     right: "2em",
-    top: "22vw",
+    top: "35vw",
     [theme.breakpoints.down(1100)]: {
       top: "17vw",
     },
@@ -50,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: 0,
     padding: 0,
     fontFamily: "times",
-    color: "#AA1936",
+    color: "#007aff",
     fontSize: "1.8em",
     letterSpacing: "-0.8px",
     fontWeight: "100",
@@ -156,7 +157,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   option: {
     color: "gray",
     "&:hover": {
-      background: "#e6e6e6",
+      background: "rgb(45, 169, 86)",
     },
   },
 }));

@@ -1,6 +1,6 @@
 import { Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import React from 'react';
+
 
 const useStyles = makeStyles((theme: Theme) => ({
   icono: {
@@ -54,9 +54,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     display: 'flex',
     alignItems: 'start',
-    fontFamily: 'times',
-    fontStyle: 'italic',
-    fontSize: '3.2vw',
+    fontFamily: 'Fonarto',
+    fontStyle: 'normal',
+    fontSize: '50px',
     margin: 0,
     textAlign: 'left',
     fontWeight: '300',
@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%',
     fontFamily: "'Nunito', sans- serif",
     fontStyle: 'regular',
-    fontSize: '18px',
+    fontSize: '20px',
     marginBottom: '20%',
     [theme.breakpoints.down('md')]: {
       marginBottom: '0',
@@ -90,7 +90,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-const BodyInfoBecaAon = ({ title, body }: { title?: any, body: any },) => {
+const BodyInfo = ({ title, body }: { title?: any, body: any },) => {
   const classes = useStyles();
 
   return (
@@ -109,4 +109,4 @@ const BodyInfoBecaAon = ({ title, body }: { title?: any, body: any },) => {
   );
 };
 
-export default BodyInfoBecaAon;
+export default BodyInfo;
