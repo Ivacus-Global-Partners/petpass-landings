@@ -1,253 +1,144 @@
+
+
+
+import React from 'react';
 import { Theme, useMediaQuery, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import React from 'react';
+
+interface IconsInfoProps {
+  title: string;
+}
+
+interface Feature {
+  id: string;
+  title: string;
+  description: string;
+  imgSrc: string;
+}
 
 const useStyles = makeStyles((theme: Theme) => ({
-  tableContainer: {
-    margin: '0',
-    padding: '15px 0',
-    width: '70%',
-    [theme.breakpoints.down('md')]: {
-      width: '80%',
-    },
-    [theme.breakpoints.down('sm')]: {
-      width: '90%',
-    }
-  },
-  icon: {
-    width: '5vw',
-    [theme.breakpoints.down(1100)]: {
-      width: '8vw',
-    },
-    [theme.breakpoints.down('md')]: {
-      width: '10vw',
-    },
-    [theme.breakpoints.down('sm')]: {
-      width: '17vw',
-    },
-    [theme.breakpoints.down(550)]: {
-      width: '14vw',
-    }
-  },
   container: {
     display: 'flex',
-    paddingBottom: '0px',
-    alignItems: 'start',
+    flexDirection: 'column',
+    alignItems: 'center',
     justifyContent: 'center',
+    maxWidth: '100%',
+    padding: '15px 0',
   },
-  iconsTd: {
-    padding: '15px 10px',
-    width: '100px',
-    fontSize: '0px',
-    direction: 'ltr',
-    paddingTop: '0px',
-    textAlign: 'center',
-    fontFamily: 'Ubuntu, Helvetica, Arial, sans-serif',
-  },
-
   titleContainer: {
-    display: 'flex',
-    justifyContent: 'center', // Centrado horizontal
-    alignItems: 'center', // Centrado vertical
-    textAlign: 'center', // Alineación del texto
-    marginTop: '20px',
-    [theme.breakpoints.down('md')]: {
-      marginTop: '0px',
-    },
-  },
-  
-  
-  title: {
-    display: 'flex',
-    alignItems: 'start',
-    fontFamily: 'Fonarto',
-    fontStyle: 'normal',
-    fontSize: '50px',
-    margin: 0,
-    textAlign: 'left',
-    fontWeight: '300',
-    color: '#AA1936',
-    marginBottom: '5%',
-    [theme.breakpoints.down('md')]: {
-      textAlign: 'left',
-      fontWeight: '200',
-      fontSize: '2.6em',
-    },
-    [theme.breakpoints.down('sm')]: {
-      textAlign: 'center',
-      fontSize: '1.9em',
-    },
-  },
-  iconsDiv: {
-    fontSize: '0px',
     textAlign: 'center',
-    direction: 'ltr',
-    display: 'initial',
-    verticalAlign: 'middle',
-    margin: '35px',
-    width: '100%'
-  }
+    marginTop: '30px',
+    marginBottom: '30px',
+  },
+  title: {
+    fontFamily: 'Fonarto',
+    fontSize: '2.5rem',
+    color: '#000000',
+    fontWeight: 'bold',
+    marginBottom: '20px',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.5rem',
+    },
+  },
+  featureRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+    maxWidth: '960px',
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+  },
+  featureContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+    margin: '20px',
+    width: '200px',
+    [theme.breakpoints.down('sm')]: {
+      width: '80%',
+      margin: '20px 0',
+    },
+  },
+  iconBackground: {
+    backgroundColor: '#2DA956',
+    padding: '1rem',
+    borderRadius: '10px',
+    boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.2)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  icon: {
+    width: '110px',
+    height: '70px',
+  },
+  description: {
+    fontSize: '0.9rem',
+    color: '#333',
+    marginTop: '10px',
+  },
+  featureTitle: {
+    marginTop: '10px', // Add margin to separate feature title from the icon
+  },
 }));
 
-const IconsInfo = ({ title, dates, duration, language, place, format }: {title?: string, dates: string[], duration: any, language: string, place?: any, format: any }) => {
-
+const IconsInfo: React.FC<IconsInfoProps> = ({ title }) => {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
+  const features: Feature[] = [
+    {
+      id: 'mobilityId',
+      title: 'Mobility Id',
+      description: 'Solución digital completa en App, Wallet y Smart Pet Tag para certificar la identidad de tu mascota, tus datos personales y el seguro de tu peludo para facilitarte el día a día con tu mascota.',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2Fmobility_logo.e2ef91a5.png?alt=media&token=6e1d84ea-a6cf-4007-8549-faa6ad6e5d6d', // Update with your image URL
+    },
+    {
+      id: 'smartPetTag',
+      title: 'Smart Pet Tag',
+      description: 'Smart Pet Tag, el servicio premium de identificación y recuperación de mascotas con código QR, tecnología NFC y soporte telefónico 24/7 durante todo el año para encontrar a tu mascota.',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2FpetPass_logo.614e2e60.png?alt=media&token=9de54456-08f0-422a-bba7-b615c4da90d6'
+    },
+    {
+      id: 'segurosParaTusMascotas',
+      title: 'Seguros para tus mascotas',
+      description: 'Seguro de mascotas diseñado para dueños responsables, ofreciendo una amplia gama de coberturas que van desde 120.200€ (PetPass Protect) hasta 350.000€ (PetPass Shield) en responsabilidad civil por los daños causados por los animales asegurados.',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2Fseguridad_logo.05bb0075.png?alt=media&token=de8a27a5-92e9-4d23-b368-f5dbcfae2ab7'
+    },
+    {
+      id: 'beneficiosYVentajas',
+      title: 'Beneficios y Ventajas',
+      description: 'Súmate a la comunidad PetPass y accede a descuentos exclusivos que nuestros partners preparan especialmente para nuestros miembros.',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2Fbeneficios_logo.aafbb615.png?alt=media&token=774c91d1-3417-4046-b7b6-f36d43757486'
+    }
+  ];
+
   return (
-    <div style={{ margin: '0px auto', backgroundColor: '#F7F7F7', maxWidth: '100%', paddingTop: '15px' }} className={classes.container}>
-          {title && (
+    <div className={classes.container}>
+      {title && (
         <div className={classes.titleContainer}>
-          <h1 className={classes.title}>
-            {title}
-          </h1>
+          <h1 className={classes.title}>{title}</h1>
         </div>
       )}
-        {isMobile ? (
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%', rowGap: '15px', padding: '10px 0 15px' }}>
-            <div style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'center', alignItems: 'start', columnGap: '3px' }}>
-              <div style={{ rowGap: '10px', display: 'flex', flexDirection: 'column', width: '33%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100&' }}>
-                <img
-                  className={classes.icon}
-                  src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Ficonos%2Fcalendario.png?alt=media&token=8180ed33-4cc8-474c-b547-3c44e01471f5"
-                  alt='fechas'
-                />
-                <div style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                  <strong>Fechas</strong><br />
-                  {dates.map((d, i) => (
-                    <React.Fragment key={i}>
-                      {d} < br />
-                    </React.Fragment>
-                  ))}
-                </div>
-              </div>
-              <div style={{ display: 'flex', rowGap: '10px', flexDirection: 'column', width: '33%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100&' }}>
-                <img
-                  className={classes.icon}
-                  src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Ficonos%2Fhorario.png?alt=media&token=c2fc5731-bd2d-47e3-8af3-c05dc21cfe5c"
-                  alt='Duración'
-                />
-                <div style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                  <strong>Duración</strong><br />
-                  {duration}
-                </div>
-              </div>
-              {place && <div style={{ display: 'flex', rowGap: '10px', flexDirection: 'column', width: '33%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100&' }}>
-                <img
-                  className={classes.icon}
-                  src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Ficonos%2Fidioma.png?alt=media&token=4e54d49c-7f7e-45aa-9b42-4325b96a2561"
-                  alt='Idioma'
-                />
-                <div style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                  <strong>Idioma</strong><br />
-                  {language}
-                </div>
-              </div>}
+      <div className={classes.featureRow}>
+        {features.map((feature) => (
+          <div key={feature.id} className={classes.featureContainer}>
+            <div className={classes.iconBackground}>
+              <img src={feature.imgSrc} alt={feature.title} className={classes.icon} />
             </div>
-            <div style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'center', alignItems: 'start' }}>
-              {place && <div style={{ display: 'flex', rowGap: '10px', flexDirection: 'column', width: '50%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100&' }}>
-                <img
-                  className={classes.icon}
-                  src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Ficonos%2Fubicacion.png?alt=media&token=f337f820-575e-46ad-9846-52c8a46d528b"
-                  alt='Lugar'
-                />
-                <div style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                  <strong>Lugar</strong><br />
-                  {place}
-                </div>
-              </div>}
-              {!place && <div style={{ display: 'flex', rowGap: '10px', flexDirection: 'column', width: '33%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100&' }}>
-                <img
-                  className={classes.icon}
-                  src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Ficonos%2Fidioma.png?alt=media&token=4e54d49c-7f7e-45aa-9b42-4325b96a2561"
-                  alt='Idioma'
-                />
-                <div style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                  <strong>Idioma</strong><br />
-                  {language}
-                </div>
-              </div>}
-              <div style={{ display: 'flex', rowGap: '10px', flexDirection: 'column', width: `${!place ? '33%' : '50%'}`, justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100&' }}>
-                <img
-                  className={classes.icon}
-                  src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Ficonos%2Fformato.png?alt=media&token=7d1e192c-23ea-4162-a14f-e1242fef288c"
-                  alt='Formato'
-                />
-                <div style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                  <strong> Formato</strong><br />
-                  {format}
-                </div>
-              </div>
-            </div>
+            <strong className={classes.featureTitle}>{feature.title}</strong>
+            <p className={classes.description}>{feature.description}</p>
           </div>
-        ) : (
-          <div style={{ paddingBottom: '20px', display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'center', alignItems: 'start' }}>
-            <div style={{ rowGap: '10px', display: 'flex', flexDirection: 'column', width: '25%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100&' }}>
-              <img
-                className={classes.icon}
-                src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Ficonos%2Fcalendario.png?alt=media&token=8180ed33-4cc8-474c-b547-3c44e01471f5"
-                alt='fechas'
-              />
-              <div style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                <strong>Fechas</strong><br />
-                {dates.map((d, i) => (
-                  <React.Fragment key={i}>
-                    {d} < br />
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
-            <div style={{ display: 'flex', rowGap: '10px', flexDirection: 'column', width: '25%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100&' }}>
-              <img
-                className={classes.icon}
-                src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Ficonos%2Fhorario.png?alt=media&token=c2fc5731-bd2d-47e3-8af3-c05dc21cfe5c"
-                alt='Duración'
-              />
-              <div style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                <strong>Duración</strong><br />
-                {duration}
-              </div>
-            </div>
-            <div style={{ display: 'flex', rowGap: '10px', flexDirection: 'column', width: '25%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100&' }}>
-              <img
-                className={classes.icon}
-                src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Ficonos%2Fidioma.png?alt=media&token=4e54d49c-7f7e-45aa-9b42-4325b96a2561"
-                alt='Idioma'
-              />
-              <div style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                <strong>Idioma</strong><br />
-                {language}
-              </div>
-            </div>
-            {place && <div style={{ display: 'flex', rowGap: '10px', flexDirection: 'column', width: '25%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100&' }}>
-              <img
-                className={classes.icon}
-                src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Ficonos%2Fubicacion.png?alt=media&token=f337f820-575e-46ad-9846-52c8a46d528b"
-                alt='Lugar'
-              />
-              <div style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                <strong>Lugar</strong><br />
-                {place}
-              </div>
-            </div>}
-            <div style={{ display: 'flex', rowGap: '10px', flexDirection: 'column', width: '25%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100&' }}>
-              <img
-                className={classes.icon}
-                src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Ficonos%2Fformato.png?alt=media&token=7d1e192c-23ea-4162-a14f-e1242fef288c"
-                alt='Formato'
-              />
-              <div style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                <strong>Formato</strong><br />
-                {format}
-              </div>
-            </div>
-          </div>
-        )
-        }
-      </div >
-    </div >
-  )
-}
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default IconsInfo;

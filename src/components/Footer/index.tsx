@@ -1,205 +1,106 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Grid, Box, Theme } from '@mui/material';
-import './style.css'
 import DownloadIcon from '@mui/icons-material/Download';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const useStyles = makeStyles((theme: Theme) => ({
   footer: {
-    backgroundColor: '#F7F7F7',
+    backgroundColor: '#032F41', // Cambiado al color azul oscuro según la imagen
+    color: 'white',
     padding: '40px 3vw',
     [theme.breakpoints.down('sm')]: {
-      padding: '20px 0',
+      padding: '20px 3vw',
     }
   },
-  mainLogo: {
-    maxWidth: '200px',
-    height: 'auto',
-  },
-  imageContainer: {
-    height: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
-      justifyContent: 'center',
-    }
-  },
-  secondaryText: {
-    color: '#FFFFFF',
-    textAlign: 'left',
-    marginBottom: 0,
-    fontSize: '18px',
-  },
-  iconsItem: {
-    fontStyle: 'normal',
-    textAlign: 'right',
-    [theme.breakpoints.down('sm')]: {
-      padding: '7px 0',
-      textAlign: 'center',
-    },
-    '& h3': {
-      display: 'flex',
-      alignItems: 'center',
-      columnGap: '10px',
-    },
-    '& label': {
-      [theme.breakpoints.between('md', 'lg')]: {
-        fontSize: '1.7vw',
-      },
-      [theme.breakpoints.down('sm')]: {
-        fontSize: '4vw',
-      },
-      [theme.breakpoints.between('sm', 'md')]: {
-        fontSize: '1.7vw',
-      },
-    },
-    '& h3, & a': {
-      margin: 0,
-      color: '#000000',
-      fontSize: '1.5vw',
-      fontWeight: 'normal',
-      textDecoration: 'none',
-      transition: 'color 0.3s ease',
-      '&:hover': {
-        color: '#c5c5d6',
-      },
-      [theme.breakpoints.down('sm')]: {
-        fontSize: '5vw',
-      },
-      [theme.breakpoints.between('md', 'lg')]: {
-        fontSize: '2vw',
-      },
-      [theme.breakpoints.between('sm', 'md')]: {
-        fontSize: '1.9vw',
-      },
-    },
-  },
-  logosArea: {
-    display: 'flex',
-    alignItems: 'self-end',
-    [theme.breakpoints.down('sm')]: {
-      maxWidth: '60%',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginTop: '30px',
-    },
-    [theme.breakpoints.between('sm', 'md')]: {
-      maxWidth: '20%',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  },
-  logos: {
-    alignItems: 'center',
-    display: 'flex',
-    flexDirection: 'row',
-    maxWidth: '100%',
-    justifyContent: 'end',
-    '& img': {
-      maxWidth: '100%',
-    },
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'row !important',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    [theme.breakpoints.between('sm', 'md')]: {
-      flexDirection: 'column !important',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  },
-
-  itemsContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column !important',
-      alignItems: 'center !important',
-      marginBottom: '30px',
-      marginTop: '30px',
-    }
-  },
-  menuContainer: {
-    maxWidth: '400px',
-    [theme.breakpoints.down('lg')]: {
-      maxWidth: '250px',
-    },
-    [theme.breakpoints.up('xl')]: {
-      maxWidth: '400px',
-    },
-    [theme.breakpoints.down('sm')]: {
-      maxWidth: '70%',
-      marginRight: '20px',
-      marginBottom: '30px',
-      '& img': {
-        maxWidth: '120%',
-        marginLeft: '-5%',
-      }
-    },
-  },
-  downLoadBtn: {
-    display: 'flex',
-    alignItems: 'center',
-    columnGap: '3px',
-    border: 'none',
+  downloadSection: {
     textAlign: 'center',
-    height: '40px',
-    width: '268px',
-    borderRadius: '20px',
-    background: '#980628',
-    padding: '8px 62px',
-    fontSize: 'medium',
-    color: 'white',
-    margin: '25px',
-    cursor: 'pointer',
-    [theme.breakpoints.down('md')]: {
-      maxWidth: '90%',
+    paddingBottom: theme.spacing(4), // Agrega espacio debajo de la sección de descarga
+  },
+  downloadButtons: {
+    // Estilos para tus botones de descarga de la App Store y Google Play
+  },
+  copyrightText: {
+    textAlign: 'center',
+    paddingTop: theme.spacing(4), // Agrega espacio arriba del texto de copyright
+  },
+  socialIcons: {
+    display: 'flex',
+    justifyContent: 'flex-end', // Alinea los íconos de las redes sociales a la derecha
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center', // Centra en pantallas pequeñas
+      paddingTop: theme.spacing(2), // Agrega espacio arriba en pantallas pequeñas
     }
-  }
+  },
+  socialIcon: {
+    margin: theme.spacing(1), // Añade espacio alrededor de cada ícono de red social
+  },
+  // ... otros estilos que necesites
 }));
 
 const Footer = () => {
   const classes = useStyles();
 
-  const handleDownload = () => {
-    const link = document.getElementById('download-pdf');
-    if (link) {
-      link.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    }
-  };
-
   return (
     <footer className={classes.footer}>
-      <Grid container sx={{ justifyContent: 'center' }}>
-        <Grid item xs={12} sm={4}>
-          <Box className={classes.imageContainer}>
-            <img src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2Fsagardoy-logo-landings.png?alt=media&token=4e91e995-da8d-4ce2-9706-e9337820009a" className={classes.mainLogo} alt="Sagardoy Business School" />
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={4} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <button className={classes.downLoadBtn} onClick={handleDownload}>
-            <DownloadIcon sx={{ fontSize: '1.2em' }} />
-            Descargar folleto
-          </button>
-        </Grid>
-        <Grid item xs={12} sm={4} className={classes.logos}>
-          <address className={classes.iconsItem}>
-            <h3 style={{ fontSize: '18px'}}>
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2FGrupo%2010.svg?alt=media&token=b4b96451-548f-41a9-9517-e18d9cd9e119"
-                alt="Location"
-                width="20px"
-              />
-              C/Velázquez 86D. 28006 Madrid
-            </h3>
-            <label>info@sagardoyschool.com</label>
-          </address>
-        </Grid>
+      <div className={classes.downloadSection}>
+        {/* Coloca aquí los botones de descarga y la imagen relacionada */}
+        <Box>
+          <DownloadIcon color="secondary" />
+          <p>Descarga la App</p>
+          {/* Botones de App Store y Google Play */}
+        </Box>
+      </div>
+      
+      {/* Tus otros enlaces del footer (Acerca de Petpass, Sectores, Contacto, etc.) */}
+      
+      <div className={classes.socialIcons}>
+        {/* Añade los íconos de las redes sociales */}
+        <InstagramIcon className={classes.socialIcon} />
+        <FacebookIcon className={classes.socialIcon} />
+        <TwitterIcon className={classes.socialIcon} />
+        <LinkedInIcon className={classes.socialIcon} />
+        <YouTubeIcon className={classes.socialIcon} />
+      </div>
+      
+      <div className={classes.downloadSection}>
+        {/* Botones de descarga de la App Store y Google Play */}
+      </div>
+      
+      <div className={classes.socialIcons}>
+        {/* Íconos de redes sociales */}
+      </div>
+      
+      <div className={classes.downloadSection}>
+        {/* Sección de descarga de la aplicación, ajustada según sea necesario */}
+      </div>
+      
+      <div className={classes.socialIcons}>
+        {/* Íconos de redes sociales alineados a la izquierda */}
+      </div>
+      
+      <Box className={classes.downloadButtons}>
+        {/* Botones e íconos de descarga aquí */}
+      </Box>
+      
+      <Box className={classes.socialIcons}>
+        {/* Íconos de redes sociales aquí */}
+      </Box>
+
+      <Grid container justifyContent="space-between" alignItems="center">
+        {/* Espacio para el logo, los íconos de descarga y los íconos de redes sociales */}
       </Grid>
-    </footer >
+
+      <Box className={classes.copyrightText}>
+        Copyright ©2024 IVACUS GLOBAL PARTNERS SL.
+      </Box>
+
+      {/* Otras secciones que puedas necesitar */}
+    </footer>
   );
 };
 

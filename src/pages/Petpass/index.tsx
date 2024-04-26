@@ -1,9 +1,11 @@
 import React from "react";
 import BodyInfo from "../../components/BodyInfo";
 import InfoForm from "../../components/infoForm";
+import HeaderPetPass from "../../components/HeaderPetPass";
 import IconsInfo from "../../components/IconsInfo";
-import HeaderBeca from "../../components/HeaderPetPass";
+import BodyInfo1 from "../../components/BodyInfo1";
 import { Helmet } from "react-helmet";
+import Footer from "../../components/Footer";
 
 
 
@@ -11,23 +13,7 @@ const PetPass: React.FC = () => {
   const href =
     "";
   const download = "";
-  const claustro = [
-    {
-      img: "https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2FLanding%20Beca%20Aon%2FCarmen-Burgos-Casas%402x.png?alt=media&token=11917d00-fa73-42fe-8af4-03589c5f5671",
-      name: "Carmen Burgos Casas",
-      job: "Executive Director Health Solutions at Aon",
-    },
-    {
-      img: "https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2FLanding%20Beca%20Aon%2Fvanessa-izquierdo%402x.png?alt=media&token=4969e609-dc86-4069-bd15-d03699373ef4",
-      name: "Vanessa Izquierdo",
-      job: "Directora Académica del Máster Executive en Dirección de Recursos Humanos. Directora Ejecutiva Sagardoy Business & Law School.  ",
-    },
-    {
-      img: "https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Flandings%2FLanding%20Beca%20Aon%2Fnaira%402x.png?alt=media&token=3042095a-57b2-419c-a613-4f7c6ed22b01",
-      name: "Naira Pérez Alonso",
-      job: "Directora de Estrategia de Sagardoy Business & Law School ",
-    },
-  ];
+ 
   const texto = (
     <>
       <strong>La solución digital, <span style={{ color: "#2DA956" }}>Web, App y Smart Pet Tag</span> para la movilidad inteligente de tus mascotas</strong> 😘
@@ -37,60 +23,26 @@ const PetPass: React.FC = () => {
     </>
   );
   
-  const texto1 = (
-    <>
-      Si eres directivo o futuro directivo de RRHH que busca impulsar cambios
-      significativos, esta beca es para ti. 
-    </>
-  );
-  const texto2 = (
-    <>
-      <strong>1er Premio:</strong> Admisión al Máster Executive en Dirección de
-      Recursos Humanos para el año académico 2024, con una beca que cubre el
-      100% de las tasas del programa.
-      <br />
-      <br />
-      <strong>2do Premio:</strong> Admisión al Máster Executive en Dirección de
-      Recursos Humanos para el año académico 2024, con una beca que cubre el 50%
-      de las tasas del programa.
-    </>
-  );
-  const texto3 = (
-    <>
-      El Jurado examinará las postulaciones y seleccionará a los ganadores el
-      día 7 de junio de 2024. En esa misma fecha, daremos a conocer la decisión
-      sobre los ganadores a las becas para el{" "}
-      <strong>
-        Máster Executive en Dirección de Recursos Humanos de Sagardoy Business &
-        Law School 2024.
-      </strong>
-    </>
-  );
-  const textoPremios = (
-    <>
-      <strong>1er Premio:</strong> 1 beca del 100% para el Máster Executive en Dirección de RRHH, edición 2024<br/>
-      <strong>2do Premio:</strong> 1 beca del 50% para el Máster Executive en Dirección de RRHH, edición 2024
-    </>
-  );
+
   const redirect = "https://sagardoyschool.com/thank-you/beca-aon-impulsando-la-innovaci%C3%B3n-en-recursos-humanos/";
 
   return (
     <div>
       <Helmet>
-        <title>Beca Aon: Impulsando la innovación en Recursos Humanos</title>
+        <title>Pet Pass</title>
         <meta
           name="title"
-          content="Beca Aon: Impulsando la innovación en Recursos Humanos"
+          content="PetPass - La solución digital para la movilidad inteligente de tus mascotas"
         />
-        <meta name="description" content="Descripción de la beca Aon aquí." />
+        <meta name="description" content="Descripción de PetPass." />
         <meta name="robots" content="index, follow" />
         <meta
           name="keywords"
-          content="beca, Aon, innovación, recursos humanos"
+          content="web, app, smart pet tag, movilidad inteligente, mascotas, alta gratis, smart pet tag, localizar, comercios, bares, restaurantes, transporte público, barreras"
         />
       </Helmet>
 
-      <HeaderBeca
+      <HeaderPetPass
         image={
           "https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2FSlider_petpass1.png?alt=media&token=4e323848-e003-47bb-8b30-a3ecad10f265"
         }
@@ -111,17 +63,13 @@ const PetPass: React.FC = () => {
         }
         body={texto}
       />
-    
-      <IconsInfo
-        title="¿Qué incluye?"
-        body={[
-          "Web y App",
-          "Smart Pet Tag",
-          "Localización en tiempo real",
-          "Acceso a comercios, bares, restaurantes y medios de transporte público",
-        ]}
-     
+      <IconsInfo title="Características Principales" />
+      <BodyInfo1/>
+      <Footer />
+       
+
     </div>
+   
   );
 };
 
