@@ -292,7 +292,7 @@ const InfoForm = ({
       {title && (
         <h3 className={classes.h3}>
           <InfoOutlinedIcon />
-          Solicita información
+          Contrata ahora
         </h3>
       )}
       <div style={{ display: 'flex', flexDirection: 'column', rowGap: '10px', alignItems: 'center' }}>

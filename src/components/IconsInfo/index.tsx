@@ -64,18 +64,9 @@ const useStyles = makeStyles((theme: Theme) => ({
       margin: '20px 0',
     },
   },
-  iconBackground: {
-    backgroundColor: '#2DA956',
-    padding: '1rem',
-    borderRadius: '10px',
-    boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.2)',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   icon: {
-    width: '110px',
-    height: '70px',
+    width: '140px',
+    height: '130px',
   },
   description: {
     fontSize: '0.9rem',
@@ -97,25 +88,25 @@ const IconsInfo: React.FC<IconsInfoProps> = ({ title }) => {
       id: 'mobilityId',
       title: 'Mobility Id',
       description: 'Solución digital completa en App, Wallet y Smart Pet Tag para certificar la identidad de tu mascota, tus datos personales y el seguro de tu peludo para facilitarte el día a día con tu mascota.',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2Fmobility_logo.e2ef91a5.png?alt=media&token=6e1d84ea-a6cf-4007-8549-faa6ad6e5d6d', // Update with your image URL
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2FMOBILITY_ID.svg?alt=media&token=b6f62254-ac74-4a65-8f85-000d7c45aa10', // Update with your image URL
     },
     {
       id: 'smartPetTag',
       title: 'Smart Pet Tag',
       description: 'Smart Pet Tag, el servicio premium de identificación y recuperación de mascotas con código QR, tecnología NFC y soporte telefónico 24/7 durante todo el año para encontrar a tu mascota.',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2FpetPass_logo.614e2e60.png?alt=media&token=9de54456-08f0-422a-bba7-b615c4da90d6'
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2FSMART_PET_TAG.svg?alt=media&token=bf73f5fd-befa-4db3-82c3-d6e59de8bcb7'
     },
     {
       id: 'segurosParaTusMascotas',
       title: 'Seguros para tus mascotas',
       description: 'Seguro de mascotas diseñado para dueños responsables, ofreciendo una amplia gama de coberturas que van desde 120.200€ (PetPass Protect) hasta 350.000€ (PetPass Shield) en responsabilidad civil por los daños causados por los animales asegurados.',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2Fseguridad_logo.05bb0075.png?alt=media&token=de8a27a5-92e9-4d23-b368-f5dbcfae2ab7'
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2FSEGURO_MASCOTA.svg?alt=media&token=290594ec-cd6d-4194-9e6f-c590763455d1'
     },
     {
       id: 'beneficiosYVentajas',
       title: 'Beneficios y Ventajas',
       description: 'Súmate a la comunidad PetPass y accede a descuentos exclusivos que nuestros partners preparan especialmente para nuestros miembros.',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2Fbeneficios_logo.aafbb615.png?alt=media&token=774c91d1-3417-4046-b7b6-f36d43757486'
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2FBENEFICIOS_VENTAJAS.svg?alt=media&token=d47cc97e-9eb4-4ede-8012-0e4df351de22'
     }
   ];
 
@@ -129,9 +120,9 @@ const IconsInfo: React.FC<IconsInfoProps> = ({ title }) => {
       <div className={classes.featureRow}>
         {features.map((feature) => (
           <div key={feature.id} className={classes.featureContainer}>
-            <div className={classes.iconBackground}>
+            
               <img src={feature.imgSrc} alt={feature.title} className={classes.icon} />
-            </div>
+           
             <strong className={classes.featureTitle}>{feature.title}</strong>
             <p className={classes.description}>{feature.description}</p>
           </div>
