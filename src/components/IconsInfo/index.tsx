@@ -27,15 +27,15 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   titleContainer: {
     textAlign: 'center',
-    marginTop: '30px',
-    marginBottom: '30px',
+    marginTop: '20px',
+    marginBottom: '15px',
   },
   title: {
     fontFamily: 'Fonarto',
     fontSize: '2.5rem',
     color: '#000000',
     fontWeight: 'bold',
-    marginBottom: '20px',
+    marginBottom: '0px',
     [theme.breakpoints.down('sm')]: {
       fontSize: '1.5rem',
     },
