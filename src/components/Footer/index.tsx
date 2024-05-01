@@ -18,10 +18,10 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, alignItems: 'center', marginTop: 1 }}>
               <Link href="https://play.google.com/store/apps/details?id=pro.petpass" target="_blank" rel="noopener noreferrer">
-                <img src="https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2Fpngegg%20(1).png?alt=media&token=4a681308-15e1-464e-8ae9-07c3bf8f6d19" alt="Google Play Store" style={{ width: '120px', height: 'auto' }} />
+                <img src="https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2Ffooterplay.f9227a6e.svg?alt=media&token=0e8f8663-3644-41b4-9723-ba184ee6d000" alt="Google Play Store" style={{ width: '120px', height: 'auto' }} />
               </Link>
               <Link href="https://apps.apple.com/es/app/petpass-pro/id6479317160" target="_blank" rel="noopener noreferrer">
-                <img src="https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2Fpngegg%20(4).png?alt=media&token=9181ab7b-2e5c-4b63-b93f-48be9605e7c0" alt="App Store" style={{ width: '120px', height: 'auto' }} />
+                <img src="https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2Ffooterapp.46656e23%20(2).svg?alt=media&token=35913e12-d379-412d-8122-ad6826ecc45b" alt="App Store" style={{ width: '120px', height: 'auto' }} />
               </Link>
             </Box>
           </Grid>
