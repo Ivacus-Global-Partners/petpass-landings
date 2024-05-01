@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "petpass-7717b"
+  },
+  "targets": {
+    "petpass-7717b": {
+      "hosting": {
+        "petpass-landings": [
+          "petpass-landings"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
