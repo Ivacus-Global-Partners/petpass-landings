@@ -39,7 +39,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build --outdir ./landings",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy:demo": "yarn build && firebase deploy --only hosting:petpass-landings"
   },
   "eslintConfig": {
     "extends": [
