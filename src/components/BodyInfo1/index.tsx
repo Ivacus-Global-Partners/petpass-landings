@@ -19,11 +19,11 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   content: {
     display: 'flex',
-    justifyContent: 'space-around', // Distribuye el espacio alrededor de los elementos
-    alignItems: 'center', // Alinea los elementos verticalmente
-    flexWrap: 'wrap', // Asegura que los elementos se mantengan en una fila o se apilen en pantallas más pequeñas
-    maxWidth: '1024px', // O la anchura máxima del diseño
-    margin: '0 auto', // Centra el contenedor en la página
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    maxWidth: '1024px',
+    margin: '0 auto',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   image: {
     flexShrink: 0,
     width: '45%',
-    marginRight: theme.spacing(2), // Ajusta este valor para mover la imagen hacia el centro
+    marginRight: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
       marginRight: 0,
       marginBottom: theme.spacing(3),
@@ -41,9 +41,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   list: {
     flex: 1,
-    marginLeft: theme.spacing(-2), // Ajusta esto para acercar la lista a la imagen
-    paddingLeft: theme.spacing(2), // Asegúrate de que la lista tiene algo de espacio interno si es necesario
-    maxWidth: '50%', // Asegúrate de que la lista no ocupe más del 50% del contenedor
+    marginLeft: theme.spacing(-2),
+    paddingLeft: theme.spacing(2),
+    maxWidth: '50%',
     [theme.breakpoints.down('sm')]: {
       maxWidth: '80%',
     },
@@ -53,15 +53,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 500,
     display: "flex",
     alignItems: "center",
+    textAlign: "left",
     marginBottom: theme.spacing(2),
     "& img": {
       marginRight: theme.spacing(1),
       width: "24px",
       height: "auto",
     },
+    flexWrap: 'nowrap', // Evita que el contenido se envuelva
   },
   textContainer: {
-    width: '100%', // Ajusta esto según lo necesario para centrar el texto en la pantalla
+    width: '100%',
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
@@ -70,20 +72,19 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   smallText: {
     fontSize: '0.8rem',
-    maxWidth: '60%', // Limita el ancho del texto para mejorar la legibilidad
+    maxWidth: '60%',
     color: '#333',
-    marginBottom: theme.spacing(2), // Espacio entre los párrafos de texto
+    marginBottom: theme.spacing(2),
   },
-
   logoContainer: {
-    width: "100%", // Ocupa todo el ancho para centrar el logo
-    display: "flex", // Utiliza flexbox para el centrado
-    justifyContent: "center", // Centra el logo horizontalmente
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
   },
   logo: {
-    maxWidth: "120px", // Tamaño del logo
+    maxWidth: "120px",
     height: "auto",
   },
 }));
@@ -95,8 +96,8 @@ const PromoComponent = () => {
     <div className={classes.container}>
       <h1 className={classes.title}>Seguro Caser RC incluido con Petpass*</h1>
       <p className={classes.includedInfo}>
-        Con tu Petpass tienes incluido* el obligatorio seguro de Responsabilidad
-        Civil.
+        <strong>Con tu Petpass tienes incluido* el obligatorio seguro de Responsabilidad
+        Civil.</strong>
       </p>
 
       <div className={classes.content}>
@@ -118,7 +119,7 @@ const PromoComponent = () => {
               src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2Ficon_caser_2.png?alt=media&token=2af98421-f3f5-4d7d-ad6b-da785c94a6bb"
               alt="Icono 2"
             />
-            Fácil, sin complicaciones ni preguntas. El mismo precio para todas
+            Fácil, sin complicaciones ni preguntas. <br /> El mismo precio para todas
             las razas y edades
           </li>
           <li className={classes.listItem}>
@@ -134,7 +135,7 @@ const PromoComponent = () => {
               src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2Ficon_caser_4.png?alt=media&token=3ca7109d-6cea-445e-96fa-e95b83906392"
               alt="Icono 4"
             />
-            Elije la modalidad Petpass que más te interese para estar protegido
+            Elije la modalidad Petpass que más te interese <br />para estar protegido
             desde 120.000 hasta 350.000 €.
           </li>
         </ul>

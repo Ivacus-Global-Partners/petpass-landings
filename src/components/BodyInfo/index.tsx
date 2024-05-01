@@ -12,13 +12,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
-      paddingLeft: "2",
-      paddingRight: "2",
+      paddingLeft: "2px",
+      paddingRight: "2px",
     },
   },
   infoContainer: {
     maxWidth: "800px",
-    margin: "0 25px",
+    margin: "25px 25px",
   },
   card: {
     marginTop: "30px",
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     alignItems: "start",
     fontFamily: "Fonarto",
-    fontSize: "3vw", // Este tamaño de fuente se mantendrá como en el diseño original
+    fontSize: "40px", // Este tamaño de fuente se mantendrá como en el diseño original
     margin: 0,
     textAlign: "left",
     marginBottom: "20px",
@@ -51,11 +51,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   bodyText: {
     fontSize: "16px", // Tamaño de fuente personalizado
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif", // Familia de fuente personalizada
+    fontFamily: "Arial", // Familia de fuente personalizada
     color: "#333", // Color del texto
     lineHeight: "1.5", // Altura de línea para la legibilidad
     textAlign: "justify", // Justificar el texto para una apariencia más ordenada
     marginBottom: "20px", // Margen inferior
+   
   },
 }));
 
@@ -70,7 +71,7 @@ const BodyInfo = () => {
             Descubre Petpass: Tu compañero en el cuidado de mascotas 🐾
           </strong>
         </Typography>
-        <Typography variant="body1" className={classes.bodyText}>
+        <Typography variant="body1" className={classes.bodyText} sx={{ marginTop: '20px' }}>
           <strong>
             Con Petpass, cumplir con la nueva{" "}
             <span style={{ color: "#007aff" }}>Ley de Bienestar Animal</span> es
