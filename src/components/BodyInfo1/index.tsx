@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   image: {
     flexShrink: 0,
-    width: '50%',
+    width: '45%',
     marginRight: theme.spacing(2), // Ajusta este valor para mover la imagen hacia el centro
     [theme.breakpoints.down('sm')]: {
       marginRight: 0,
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   listItem: {
-    fontSize: "20px",
+    fontSize: "15px",
     fontWeight: 500,
     display: "flex",
     alignItems: "center",
