@@ -1,107 +1,61 @@
 import React from 'react';
-import { makeStyles } from '@mui/styles';
-import { Grid, Box, Theme } from '@mui/material';
-import DownloadIcon from '@mui/icons-material/Download';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import { Grid, Box, Typography, IconButton, Link, Button } from '@mui/material';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import InstagramIcon from '@mui/icons-material/Instagram';
-
-const useStyles = makeStyles((theme: Theme) => ({
-  footer: {
-    backgroundColor: '#032F41', // Cambiado al color azul oscuro según la imagen
-    color: 'white',
-    padding: '40px 3vw',
-    [theme.breakpoints.down('sm')]: {
-      padding: '20px 3vw',
-    }
-  },
-  downloadSection: {
-    textAlign: 'center',
-    paddingBottom: theme.spacing(4), // Agrega espacio debajo de la sección de descarga
-  },
-  downloadButtons: {
-    // Estilos para tus botones de descarga de la App Store y Google Play
-  },
-  copyrightText: {
-    textAlign: 'center',
-    paddingTop: theme.spacing(4), // Agrega espacio arriba del texto de copyright
-  },
-  socialIcons: {
-    display: 'flex',
-    justifyContent: 'flex-end', // Alinea los íconos de las redes sociales a la derecha
-    [theme.breakpoints.down('sm')]: {
-      justifyContent: 'center', // Centra en pantallas pequeñas
-      paddingTop: theme.spacing(2), // Agrega espacio arriba en pantallas pequeñas
-    }
-  },
-  socialIcon: {
-    margin: theme.spacing(1), // Añade espacio alrededor de cada ícono de red social
-  },
-  // ... otros estilos que necesites
-}));
+import { SvgIconComponent } from '@mui/icons-material'; // Importa el tipo SvgIconComponent
 
 const Footer = () => {
-  const classes = useStyles();
-
   return (
-    <footer className={classes.footer}>
-      <div className={classes.downloadSection}>
-        {/* Coloca aquí los botones de descarga y la imagen relacionada */}
-        <Box>
-          <DownloadIcon color="secondary" />
-          <p>Descarga la App</p>
-          {/* Botones de App Store y Google Play */}
-        </Box>
-      </div>
-      
-      {/* Tus otros enlaces del footer (Acerca de Petpass, Sectores, Contacto, etc.) */}
-      
-      <div className={classes.socialIcons}>
-        {/* Añade los íconos de las redes sociales */}
-        <InstagramIcon className={classes.socialIcon} />
-        <FacebookIcon className={classes.socialIcon} />
-        <TwitterIcon className={classes.socialIcon} />
-        <LinkedInIcon className={classes.socialIcon} />
-        <YouTubeIcon className={classes.socialIcon} />
-      </div>
-      
-      <div className={classes.downloadSection}>
-        {/* Botones de descarga de la App Store y Google Play */}
-      </div>
-      
-      <div className={classes.socialIcons}>
-        {/* Íconos de redes sociales */}
-      </div>
-      
-      <div className={classes.downloadSection}>
-        {/* Sección de descarga de la aplicación, ajustada según sea necesario */}
-      </div>
-      
-      <div className={classes.socialIcons}>
-        {/* Íconos de redes sociales alineados a la izquierda */}
-      </div>
-      
-      <Box className={classes.downloadButtons}>
-        {/* Botones e íconos de descarga aquí */}
+    <Box sx={{ backgroundColor: '#032F41', color: 'white', padding: 2 }}>
+      <Box sx={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <Grid container spacing={2} justifyContent="space-between" alignItems="center">
+          <Grid item xs={12} sm={4} sx={{ textAlign: 'center' }}>
+            <Typography variant="subtitle1" gutterBottom style={{ fontFamily: "Arial Rounded", fontWeight: "bold", fontSize: "20px" }}>
+              Descarga la App
+            </Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, alignItems: 'center', marginTop: 1 }}>
+              <Link href="https://play.google.com/store/apps/details?id=pro.petpass" target="_blank" rel="noopener noreferrer">
+                <img src="https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2Fpngegg%20(1).png?alt=media&token=4a681308-15e1-464e-8ae9-07c3bf8f6d19" alt="Google Play Store" style={{ width: '120px', height: 'auto' }} />
+              </Link>
+              <Link href="https://apps.apple.com/es/app/petpass-pro/id6479317160" target="_blank" rel="noopener noreferrer">
+                <img src="https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2Fpngegg%20(4).png?alt=media&token=9181ab7b-2e5c-4b63-b93f-48be9605e7c0" alt="App Store" style={{ width: '120px', height: 'auto' }} />
+              </Link>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={4} sx={{ textAlign: 'center' }}>
+            <Button variant="contained" color="secondary" onClick={() => window.open('https://petpass.pro/', '_blank')} sx={{ backgroundImage: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', fontWeight: 'bold' }}>
+              <img src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Fpetpass%2FLogo_ppt_petmassmobility.png?alt=media&token=31dcce4c-62f4-4c6b-a49a-f695198126a8" alt="Web Logo" style={{ width: 80, marginRight: 8 }} />
+              Visita Nuestra Página
+            </Button>
+          </Grid>
+          <Grid item xs={12} sm={4} sx={{ textAlign: 'center' }}>
+            <Typography variant="subtitle1" gutterBottom style={{ fontFamily: "Arial Rounded", fontWeight: "bold", fontSize: "20px" }}>
+              Síguenos en
+            </Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
+              {SocialIcon(InstagramIcon)}
+              {SocialIcon(FacebookIcon)}
+              {SocialIcon(TwitterIcon)}
+              {SocialIcon(LinkedInIcon)}
+              {SocialIcon(YouTubeIcon)}
+            </Box>
+          </Grid>
+        </Grid>
       </Box>
-      
-      <Box className={classes.socialIcons}>
-        {/* Íconos de redes sociales aquí */}
-      </Box>
-
-      <Grid container justifyContent="space-between" alignItems="center">
-        {/* Espacio para el logo, los íconos de descarga y los íconos de redes sociales */}
-      </Grid>
-
-      <Box className={classes.copyrightText}>
-        Copyright ©2024 IVACUS GLOBAL PARTNERS SL.
-      </Box>
-
-      {/* Otras secciones que puedas necesitar */}
-    </footer>
+      <Typography variant="body2" align="center" sx={{ mt: 4, pt: 2, borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
+        Copyright © 2024 IVACUS GLOBAL PARTNERS SL.
+      </Typography>
+    </Box>
   );
 };
+
+const SocialIcon = (Icon: SvgIconComponent) => (
+  <IconButton sx={{ color: 'white', '&:hover': { color: '#29b6f6' } }}>
+    <Icon />
+  </IconButton>
+);
 
 export default Footer;

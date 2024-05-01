@@ -32,8 +32,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     display: "flex",
     alignItems: "start",
-    fontFamily: "Fonarto",
-    fontSize: "40px", // Este tamaño de fuente se mantendrá como en el diseño original
+    fontFamily: "Fonarto !important", // Fuente personalizada "Fonarto
+    fontSize: "40px !important", // Este tamaño de fuente se mantendrá como en el diseño original
     margin: 0,
     textAlign: "left",
     marginBottom: "20px",
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   bodyText: {
-    fontSize: "16px", // Tamaño de fuente personalizado
+    fontSize: "20px !important", // Tamaño de fuente personalizado
     fontFamily: "Arial", // Familia de fuente personalizada
     color: "#333", // Color del texto
     lineHeight: "1.5", // Altura de línea para la legibilidad
