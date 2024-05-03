@@ -9,7 +9,7 @@ const RouterComponent: React.FC = () => {
         <Router>
             <Routes>
                 
-              <Route path="/landings/petpass/protect" element={<PetPass />} />
+              <Route path="protect" element={<PetPass />} />
 
             </Routes>
         </Router>
