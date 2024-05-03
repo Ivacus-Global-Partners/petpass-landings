@@ -7,6 +7,11 @@
         margin-bottom: 0;
         /* Eliminar margen inferior */
     }
+
+    .smallText{
+        font-size: 0.7rem;
+    
+    }
 }
 
 /* .superposed-component {

@@ -13,7 +13,7 @@ const Footer = () => {
       <Box sx={{ maxWidth: '1200px', margin: '0 auto' }}>
         <Grid container spacing={2} justifyContent="space-between" alignItems="center">
           <Grid item xs={12} sm={4} sx={{ textAlign: 'center' }}>
-            <Typography variant="subtitle1" gutterBottom style={{ fontFamily: "Arial Rounded", fontWeight: "bold", fontSize: "20px" }}>
+            <Typography variant="subtitle1" gutterBottom style={{ fontFamily: "Arial", fontWeight: "bold", fontSize: "20px" }}>
               Descarga la App
             </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, alignItems: 'center', marginTop: 1 }}>
@@ -25,12 +25,7 @@ const Footer = () => {
               </Link>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={4} sx={{ textAlign: 'center' }}>
-            <Button variant="contained" color="secondary" onClick={() => window.open('https://petpass.pro/', '_blank')} sx={{ backgroundImage: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', fontWeight: 'bold' }}>
-              <img src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2Fpetpass%2FLogo_ppt_petmassmobility.png?alt=media&token=31dcce4c-62f4-4c6b-a49a-f695198126a8" alt="Web Logo" style={{ width: 80, marginRight: 8 }} />
-              Visita Nuestra Página
-            </Button>
-          </Grid>
+        
           <Grid item xs={12} sm={4} sx={{ textAlign: 'center' }}>
             <Typography variant="subtitle1" gutterBottom style={{ fontFamily: "Arial Rounded", fontWeight: "bold", fontSize: "20px" }}>
               Síguenos en
@@ -45,7 +40,7 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Box>
-      <Typography variant="body2" align="center" sx={{ mt: 4, pt: 2, borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
+      <Typography variant="body2" align="center" sx={{ mt: 4, pt: 2, borderTop: '1px solid rgba(255, 255, 255, 0.12)', fontFamily:"Arial" }}>
         Copyright © 2024 IVACUS GLOBAL PARTNERS SL.
       </Typography>
     </Box>

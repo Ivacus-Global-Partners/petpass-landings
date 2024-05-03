@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     columnGap: "15px",
     fontFamily: "times",
     fontStyle: "italic",
-    fontSize: "1vw",
+    fontSize: "1.1vw",
     margin: "10px 0 20px 5px",
     width: "100%",
     textAlign: "start",
@@ -347,31 +347,6 @@ const InfoForm = ({
         <TextField
           className={classes.input}
           variant="filled"
-          sx={{ width: "95%" }}
-          name="prefix"
-          value={values.prefix}
-          placeholder="País"
-          select
-          style={{ marginTop: '3px' }}
-          onChange={handleChange}
-        >
-          <MenuItem value="0" sx={{ display: 'none' }}>
-            País
-          </MenuItem>
-          {countries.map((country, index) => (
-            <MenuItem key={index} value={country.prefix} sx={{ display: 'flex', alignItems: 'center', lineHeight: '1em', columnGap: '5px', fontFamily: 'Nunito' }}>
-              {country.name} ({country.code} {country.prefix} {hasFlag(country.code) ? <img
-                height="10"
-                alt={country.name}
-                src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${country.code}.svg`}
-              /> : country.flag}
-              )
-            </MenuItem>
-          ))}
-        </TextField>
-        <TextField
-          className={classes.input}
-          variant="filled"
           placeholder="Número de teléfono"
           sx={{ width: "95%" }}
           name="phone"
@@ -392,14 +367,13 @@ const InfoForm = ({
           onClick={() => setEnabledSubmit((old) => !old)}
         />
         <div className={classes.checkboxText}>
-          Consiento el tratamiento de mis datos por Sagardoy Business & Law
-          School, para el envío de información comercial personalizada y/o sobre
+          Consiento el tratamiento de mis datos por Ivacus Global Partners SL, para el envío de información comercial personalizada y/o sobre
           actividades, mediante la elaboración de perfiles basados en la
           información obtenida, incluso de terceros, de conformidad con lo
           dispuesto en la{" "}
           <a
             className={classes.a}
-            href="https://www.sagardoyschool.com/politica-de-privacidad/"
+            href="https://petpass.pro/privacy-policy"
             target="_blank"
             rel="noreferrer"
           >

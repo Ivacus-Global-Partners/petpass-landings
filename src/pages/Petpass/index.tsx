@@ -8,7 +8,6 @@ import { Helmet } from "react-helmet";
 import Footer from "../../components/Footer";
 
 
-
 const PetPass: React.FC = () => {
   const href =
     "";
@@ -36,7 +35,7 @@ const PetPass: React.FC = () => {
 
       <HeaderPetPass
         image={
-          "https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2FSlider_petpass1.png?alt=media&token=4e323848-e003-47bb-8b30-a3ecad10f265"
+          "https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2Fbanner_protect_png.png?alt=media&token=1d0716ea-9eb2-4f50-b098-1bb0fe5c3546"
         }
       />
       <InfoForm

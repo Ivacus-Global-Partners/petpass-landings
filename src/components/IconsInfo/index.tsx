@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
-    maxWidth: '960px',
+    maxWidth: '1120px',
     width: '100%',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
@@ -98,8 +98,8 @@ const IconsInfo: React.FC<IconsInfoProps> = ({ title }) => {
     },
     {
       id: 'segurosParaTusMascotas',
-      title: 'Seguros para tus mascotas',
-      description: 'Seguro de mascotas diseñado para dueños responsables, ofreciendo una amplia gama de coberturas que van desde 120.200€ (PetPass Protect) hasta 350.000€ (PetPass Shield) en responsabilidad civil por los daños causados por los animales asegurados.',
+      title: 'Seguros Mascotas',
+      description: 'Seguro de mascotas diseñado para dueños responsables, ofreciendo una amplia gama de coberturas en responsabilidad civil por los daños causados por los animales asegurados.',
       imgSrc: 'https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2FSEGURO_MASCOTA.svg?alt=media&token=290594ec-cd6d-4194-9e6f-c590763455d1'
     },
     {

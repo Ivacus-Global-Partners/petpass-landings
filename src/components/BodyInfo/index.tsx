@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { Theme, Card, CardContent, Typography } from "@mui/material";
+import { Theme, Card, CardContent, Typography, Grid, Box } from "@mui/material";
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -23,10 +23,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   card: {
     marginTop: "30px",
     backgroundColor: "#f7f7f7",
+    border: "0.5px solid transparent",
     "&:hover": {
       transform: "scale(1.05)",
       transition: "transform 0.3s ease-in-out",
       backgroundColor: "#e8f5e9", // Light green background on hover
+      borderColor: "#007aff", // Border color on hover
     },
   },
   title: {
@@ -36,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: "40px !important", // Este tamaño de fuente se mantendrá como en el diseño original
     margin: 0,
     textAlign: "left",
-    marginBottom: "20px",
+    marginBottom: "30px !important", // Ajustar según necesidad
 
     color: "#2DA956", // Asegurarse de que el color es el correcto
     [theme.breakpoints.down("md")]: {
@@ -47,77 +49,83 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.down("sm")]: {
       textAlign: "center",
       fontSize: "1.9em",
+      marginBottom: "40px", // Aumentar el margen inferior en dispositivos móviles para separar del primer párrafo
     },
   },
+
+  minititle: {
+    fontFamily: "Fonarto !important",
+    fontSize: "18px !important", // Fuente personalizada "Fonarto"
+  },
+
+  body2: {
+    fontSize: "16px !important",
+    fontFamily: "Heebo !important", // Tamaño de fuente personalizado
+  },
+
   bodyText: {
     fontSize: "20px !important", // Tamaño de fuente personalizado
-    fontFamily: "Arial", // Familia de fuente personalizada
+    fontFamily: "Heebo !important", // Familia de fuente personalizada
     color: "#333", // Color del texto
-    lineHeight: "1.5", // Altura de línea para la legibilidad
+    lineHeight: "1.5 !important", // Altura de línea para la legibilidad
     textAlign: "justify", // Justificar el texto para una apariencia más ordenada
     marginBottom: "20px", // Margen inferior
-   
+  },
+
+  icon: {
+    height: "50px", // Ajusta según necesidad
+    width: "50px", // Ajusta según necesidad
+    marginBottom: "12px", // Espacio entre el icono y el texto
   },
 }));
 
 const BodyInfo = () => {
   const classes = useStyles();
+  const icons = [
+    "https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2Fchapa_petpass_feria.a34b7db4.png?alt=media&token=bab6e600-f85e-46ab-9db9-8fe18b18ec8b",
+    "https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2Flocator_icon.3e57a577.png?alt=media&token=0ef7a272-cca8-4228-86a6-80b08d70017f",
+    "https://firebasestorage.googleapis.com/v0/b/petpass-7717b.appspot.com/o/Landings%2FLandingCaser%2Ficon_insurance.b1d66ffc.png?alt=media&token=32a4db31-c879-4265-9a58-205b1e89032c",
+  ];
 
   return (
     <div className={classes.container}>
       <div className={classes.infoContainer}>
         <Typography variant="h5" className={classes.title}>
+          <strong>Petpass: El compañero de tu mascota 🐾</strong>
+        </Typography>
+        <Typography variant="body1" className={classes.bodyText}>
           <strong>
-            Descubre Petpass: Tu compañero en el cuidado de mascotas 🐾
+            Petpass Protect te ayuda a cumplir con la nueva Ley de Bienestar
+            Animal: Identificación, comunicación de perdida y seguro de
+            responsabilidad civil de forma fácil y sencilla para que puedas
+            disfrutar de tu peludo con total tranquilidad.
           </strong>
         </Typography>
-        <Typography variant="body1" className={classes.bodyText} sx={{ marginTop: '20px' }}>
-          <strong>
-            Con Petpass, cumplir con la nueva{" "}
-            <span style={{ color: "#007aff" }}>Ley de Bienestar Animal</span> es
-            más fácil y seguro. Nuestra plataforma ofrece una solución digital
-            completa que no solo te ayuda a cumplir con todas las normativas
-            legales, sino que también proporciona tranquilidad gracias a la
-            tecnología avanzada de identificación y seguimiento de mascotas.
-            ¡Explora cómo Petpass puede mejorar la vida de tu mascota y la tuya
-            con facilidad y eficiencia!
-          </strong>
-        </Typography>
-        <Card className={classes.card}>
-          <CardContent>
-            <Typography variant="h6">Chip de Identificación NFC 🐶</Typography>
-            <Typography variant="body2">
-              Cada Petpass viene con un chip NFC integrado para una
-              identificación rápida y segura.
-            </Typography>
-          </CardContent>
-        </Card>
-        <Card className={classes.card}>
-          <CardContent>
-            <Typography variant="h6">Reporte Rápido de Pérdida 😺</Typography>
-            <Typography variant="body2">
-              Nuestra plataforma operativa 24/7 te permite reportar cualquier
-              pérdida inmediatamente.
-            </Typography>
-          </CardContent>
-        </Card>
-        <Card className={classes.card}>
-          <CardContent>
-            <Typography variant="h6">
-              Seguro de Responsabilidad Civil 🛡️
-            </Typography>
-            <Typography variant="body2">
-              El seguro de responsabilidad civil de Petpass no es solo una
-              formalidad; es tu red de seguridad en un mundo impredecible. En
-              caso de que tu mascota cause daño accidentalmente a terceros,
-              nuestro seguro cubre los costos asociados, protegiéndote contra
-              reclamaciones que pueden ser económicamente devastadoras. Más allá
-              de cumplir con la ley, te ofrecemos la seguridad de saber que
-              estás completamente protegido. Con Petpass, no solo cuidas a tu
-              mascota, sino que también proteges tu paz mental y tu patrimonio.
-            </Typography>
-          </CardContent>
-        </Card>
+        <Grid container spacing={2}>
+          {icons.map((icon, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Card className={classes.card}>
+                <CardContent>
+                  <Box display="flex" justifyContent="center">
+                    <img src={icon} alt="Icono" className={classes.icon} />
+                  </Box>
+                  <Typography variant="h6" className={classes.minititle}>
+                    {["Smart Pet Tag", "Plataforma SOS", "Seguro RC"][index]}
+                  </Typography>
+                  <Typography variant="body2" className={classes.body2}>
+                    {
+                      [
+                        "Petpass incorpora un identificador de emergencia Contacless con NFC /QR para una identificación rápida y segura.",
+                        "Nuestra plataforma 24/7 te permite reportar cualquier pérdida inmediatamente y encontrar rápidamente a tu “peludo”.",
+                        "El seguro de responsabilidad civil de Petpass ofrece tranquilidad sin importar raza, edad o tamaño al mismo precio.",
+                      ][index]
+                    }
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </div>
     </div>
   );

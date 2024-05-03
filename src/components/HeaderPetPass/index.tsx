@@ -1,64 +1,28 @@
-
-import './Header.css';
-
+import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Theme } from '@mui/material';
+import './Header.css';
 
 const useStyles = makeStyles((theme: Theme) => ({
-  downLoadBtn: {
-    position: 'absolute',
-    left: '18%',
-    fontSize: '1.2em',
-    transform: 'translate(-50%, -50%)',
-    zIndex: 1,
-    display: 'flex',
-    alignItems: 'center',
-    columnGap: '5px',
-    border: 'none',
-    borderRadius: '20px',
-    background: '#980628',
-    padding: '8px 25px',
-    color: 'white',
-    cursor: 'pointer',
-    bottom: '13%',
-    [theme.breakpoints.down('md')]: {
-      left: '35%',
-      fontSize: '0.9em',
-    },
-    [theme.breakpoints.down(780)]: {
-      left: '35%',
-      fontSize: '0.9em',
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '2.5vw',
-      left: '40%',
-      bottom: '5%',
-      padding: '4px 14px',
-      transform: 'translate(-50%, -10%)',
-    },
+  headerContainer: {
+    position: 'relative',
+    maxHeight: '70vh', // Establece la altura máxima del contenedor del encabezado
+    overflow: 'hidden', // Evita que la imagen se desborde del contenedor
   },
- 
+  headerImage: {
+    width: '100%', // Ajusta la anchura de la imagen al 100% del contenedor
+    height: 'auto', // Permite que la altura se ajuste automáticamente para mantener la proporción de aspecto
+  },
 }));
 
-const HeaderBecaAon = ({ image}: { image: string }) => {
+const HeaderPetPass = ({ image }: { image: string }) => {
   const classes = useStyles();
 
-  const handleDownload = () => {
-    const link = document.getElementById('download-pdf');
-    if (link) {
-      link.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    }
-  };
-
   return (
-    <div className="header-container" style={{ position: 'relative' }}>
-      <img className='header-image' src={image} alt="Header" />
-    
+    <div className={classes.headerContainer}>
+      <img className={classes.headerImage} src={image} alt="Header" />
     </div>
   );
 };
 
-export default HeaderBecaAon;
-
-// BodyInfo.tsx
+export default HeaderPetPass;

@@ -6,16 +6,29 @@ const useStyles = makeStyles((theme: Theme) => ({
   container: {
     textAlign: "center",
     padding: theme.spacing(4),
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(2), // Reduce el padding en dispositivos pequeños
+    },
   },
   title: {
     color: "#2DA956",
+    fontFamily: "Fonarto",
     margin: `${theme.spacing(4)}px 0`,
+    [theme.breakpoints.down('sm')]: {
+      margin: `${theme.spacing(2)}px 0`, // Reduce el margen del título en dispositivos pequeños
+    },
   },
   includedInfo: {
     backgroundColor: "white",
+    fontFamily: "Heebo",
+    margin: "0 auto",
     padding: theme.spacing(1),
     display: "inline-block",
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(0.5), // Reduce el padding
+      marginBottom: theme.spacing(1), // Reduce el margen inferior
+    },
   },
   content: {
     display: 'flex',
@@ -27,6 +40,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
+      margin: theme.spacing(0), // Elimina los márgenes horizontales
     },
   },
   image: {
@@ -35,8 +49,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginRight: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
       marginRight: 0,
-      marginBottom: theme.spacing(3),
-      width: '80%',
+      marginBottom: theme.spacing(1),
+      width: '100%', // Ajusta la imagen para que ocupe todo el ancho en dispositivos móviles
     },
   },
   list: {
@@ -45,13 +59,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingLeft: theme.spacing(2),
     maxWidth: '50%',
     [theme.breakpoints.down('sm')]: {
-      maxWidth: '80%',
+      maxWidth: '100%', // Permite que la lista ocupe todo el ancho disponible
+      marginLeft: theme.spacing(0), // Elimina el margen izquierdo
+      paddingLeft: theme.spacing(0), // Elimina el padding izquierdo
     },
   },
   listItem: {
-    fontSize: "15px",
+    fontSize: "18px",
     fontWeight: 500,
     display: "flex",
+    lineHeight: "1.5",
+    fontFamily: "Heebo",
     alignItems: "center",
     textAlign: "left",
     marginBottom: theme.spacing(2),
@@ -60,7 +78,10 @@ const useStyles = makeStyles((theme: Theme) => ({
       width: "24px",
       height: "auto",
     },
-    flexWrap: 'nowrap', // Evita que el contenido se envuelva
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: theme.spacing(1), // Reduce el margen entre items
+    },
+    flexWrap: 'nowrap',
   },
   textContainer: {
     width: '100%',
@@ -69,12 +90,20 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(0), // Elimina el padding en dispositivos móviles
+    },
   },
   smallText: {
     fontSize: '0.8rem',
+    lineHeight: '1.5',
     maxWidth: '60%',
     color: '#333',
     marginBottom: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '90%', // Permite un mayor ancho de texto
+      marginBottom: theme.spacing(1), // Reduce el margen inferior
+    },
   },
   logoContainer: {
     width: "100%",
@@ -82,13 +111,19 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "center",
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('sm')]: {
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(1),
+    },
   },
   logo: {
     maxWidth: "120px",
     height: "auto",
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: "100px", // Reduce el tamaño del logo en dispositivos móviles
+    },
   },
 }));
-
 const PromoComponent = () => {
   const classes = useStyles();
 
@@ -135,15 +170,13 @@ const PromoComponent = () => {
               src="https://firebasestorage.googleapis.com/v0/b/sagardoy-lms.appspot.com/o/website%2FPetpassLandings%2Ficon_caser_4.png?alt=media&token=3ca7109d-6cea-445e-96fa-e95b83906392"
               alt="Icono 4"
             />
-            Elije la modalidad Petpass que más te interese <br />para estar protegido
-            desde 120.000 hasta 350.000 €.
+            Petpass protect con cobertura de hasta 120.000€**
           </li>
         </ul>
       </div>
       <div className={classes.textContainer}>
       <p className={classes.smallText}>
-        *Incluido en los planes Protect, Shield y Travel. **Cobertura para los
-        planes Shield y Travel. Plan Protect la cobertura hasta 120.000€
+        *Incluido en plan Protect. **Cobertura Plan Protect hasta 120.000€
       </p>
       <p className={classes.smallText}>
         Póliza mediada por Marsh Risk Consulting, S.L., con domicilio social en
