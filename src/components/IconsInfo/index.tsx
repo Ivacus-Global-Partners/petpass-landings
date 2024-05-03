@@ -1,9 +1,7 @@
-
-
-
 import React from 'react';
 import { Theme, useMediaQuery, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+
 
 interface IconsInfoProps {
   title: string;
@@ -31,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: '15px',
   },
   title: {
-    fontFamily: 'Fonarto',
+    fontFamily: "Fonarto !important", // Fuente personalizada "Fonarto
     fontSize: '2.5rem',
     color: '#000000',
     fontWeight: 'bold',

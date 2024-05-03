@@ -1,4 +1,3 @@
-import React from "react";
 import { makeStyles } from "@mui/styles";
 import { Theme, Card, CardContent, Typography, Grid, Box } from "@mui/material";
 
